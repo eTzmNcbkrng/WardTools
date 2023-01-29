@@ -4,9 +4,12 @@ on:
 - push
 
 jobs:
-  tag:
+  build:
     runs-on: ubuntu-latest
-    steps: 
-    - uses: phish108/autotag-action@master
-      with:
-        github-token: ${{ secrets.GITHUB_TOKEN}}
+    steps:
+      - uses: actions/checkout@master
+      - name: Bump version and push tag
+        uses: laputansoft/github-tag-action@v4.6
+        with:
+          github_token: ${{ env.github-token }}
+          create_annotated_tag: true
