@@ -34,10 +34,9 @@ jobs:
           fetch-depth: 0  # gets entire git history, needed for automatic changelogs
 
       - name: Bump version and push tag
-        uses: actions/checkout@v3
+        uses: mathieudutour/github-tag-action@master
         with:
           create_annotated_tag: true
-          uses: mathieudutour/github-tag-action@master
           github_token: ${{ secrets.GITHUB_TOKEN }}
 
       # once cloned, we just run the GitHub Action for the packager project
