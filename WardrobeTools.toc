@@ -5,7 +5,6 @@
 ## SavedVariablesPerCharacter: WardrobeToolsCDB
 ## Version: @project-version@
 
-## OptionalDeps: sUI
 ## X-SezzADB: WardrobeToolsADB
 ## X-SezzCDB: WardrobeToolsCDB
 
