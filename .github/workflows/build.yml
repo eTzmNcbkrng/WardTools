@@ -36,4 +36,4 @@ jobs:
       - name: Package and release
         uses: BigWigsMods/packager@master
         with:
-          args: --n "{package-name}-${{ steps.tag_version.outputs.new_tag }}"
+          args: -n "{package-name}-${{ steps.tag_version.outputs.new_tag }}"
