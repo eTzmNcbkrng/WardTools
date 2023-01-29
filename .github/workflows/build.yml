@@ -36,5 +36,4 @@ jobs:
       - name: Package and release
         uses: BigWigsMods/packager@master
         with:
-          args: -n "{package-name}-${{ steps.tag_version.outputs.new_tag }}"
-          github_token: ${{ secrets.GITHUB_TOKEN }}
+          args: -g retail -n "{package-name}-${{ steps.tag_version.outputs.new_tag }}"
