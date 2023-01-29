@@ -38,6 +38,13 @@ jobs:
         with:
           create_annotated_tag: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: Create a GitHub release
+        uses: ncipollo/release-action@v1
+        with:
+          tag: ${{ steps.tag_version.outputs.new_tag }}
+          name: Release ${{ steps.tag_version.outputs.new_tag }}
+          body: ${{ steps.tag_version.outputs.changelog }}
 
       # once cloned, we just run the GitHub Action for the packager project
       - name: Package and release
