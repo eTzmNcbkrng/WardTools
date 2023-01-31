@@ -3,7 +3,7 @@ name: Package and release
 
 on:
   workflow_run:
-    workflows: [release]
+    workflows: [Fully-Semi-Automaticated]
     types: [completed]
 
 jobs:
