@@ -2,23 +2,22 @@
 name: Package and release
 
 on:
-  push:
-    tags:
-      - '**'
-      
+  workflow_run:
+    workflows: [release]
+    types: [completed]
+
 jobs:
   release:
     runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
     env:
       GITHUB_OAUTH: ${{ secrets.GITHUB_TOKEN }}
-      
-    steps:
     
+    steps:
       - name: Clone project
         uses: actions/checkout@v3
         with:
           fetch-depth: 0
-
 
       - name: Package and release
         uses: BigWigsMods/packager@master
