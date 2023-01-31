@@ -29,6 +29,3 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
-
-      - name: Package and release
-        uses: BigWigsMods/packager@master
