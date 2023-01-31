@@ -4,7 +4,7 @@ name: Package and release
 on:
   push:
     tags:
-      - '*'
+      - '**'
       
 jobs:
   release:
@@ -22,5 +22,3 @@ jobs:
 
       - name: Package and release
         uses: BigWigsMods/packager@master
-        with:
-          args: -g retail -n "{package-name}-${{ steps.tag_version.outputs.new_tag }}"
