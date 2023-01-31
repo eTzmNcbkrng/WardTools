@@ -4,7 +4,7 @@ name: Auto tag
 on:
   push:
     branches:
-      - master1
+      - master
 
 jobs:
   release:
