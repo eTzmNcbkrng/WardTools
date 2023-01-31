@@ -4,7 +4,7 @@ name: Auto tag
 on:
   push:
     branches:
-      - master
+      - master1
 
 jobs:
   release:
@@ -15,11 +15,4 @@ jobs:
         id: tag_version
         uses: mathieudutour/github-tag-action@v6.1
         with:
-          release_type: custom
-          create_annotated_tag: true
           github_token: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: Create a GitHub release
-        uses: ncipollo/release-action@v1
-        with:
-          tag: ${{ steps.tag_version.outputs.new_tag }}
