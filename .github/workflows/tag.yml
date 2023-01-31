@@ -25,15 +25,6 @@ jobs:
         uses: ncipollo/release-action@v1
         with:
           tag: ${{ steps.tag_version.outputs.new_tag }}
-        
-      - name: Sleep
-        run: sleep 1s
-        shell: bash
-
-      - name: Clone project
-        uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
 
       - name: Package and release
         uses: BigWigsMods/packager@master
